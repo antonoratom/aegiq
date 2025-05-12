@@ -1,0 +1,22 @@
+.sort-link_cont .u-icon.cc-16 {
+  bottom: var(--_spacing---spacing-utility-rem--0-125rem);
+}
+.sort-link_target {
+  display: grid;
+  grid-template-rows: 0.8fr;
+  transition: grid-template-rows 500ms;
+}
+.sort-link_cont:has(.sort-link_trigger:hover) .sort-link_target,
+.sort-link_cont .sort-link_target:hover {
+  grid-template-rows: 1fr;
+}
+.sort-link_cont:has(.sort-link_trigger:hover) .sort-link_text,
+.sort-link_cont:has(.sort-link_trigger:hover) .sort-link_text {
+  color: var(--_colors---brand-colors--tech-purple);
+}
+
+.sort-link_cont:has(.sort-link_trigger:hover) .u-icon.cc-16,
+.sort-link_cont:has(.sort-link_trigger:hover) .u-icon.cc-16 {
+  color: var(--_colors---colors-main--primary);
+  transform: rotate(180deg);
+}
