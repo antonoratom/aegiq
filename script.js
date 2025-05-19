@@ -1,3 +1,76 @@
+//START SWIPER FOR EVENTS ON ABOUT US PAGE
+const swiper = new Swiper(".big-card-clw", {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  navigation: {
+    nextEl: ".swiper-button.right",
+    prevEl: ".swiper-button.left",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+//END SWIPER FOR EVENTS ON ABOUT US PAGE
+
+//START SWIPER FOR ALL PRODUCTS PAGE
+if (window.innerWidth < 992) {
+  const swiper = new Swiper(".what-we-do_wrap", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: ".swiper-button.right",
+      prevEl: ".swiper-button.left",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+    },
+  });
+}
+//END SWIPER FOR ALL PRODUCTS PAGE
+console.log("test-cl");
+
+//START SWIPER FOR OPEN PRODUCTS PAGE
+if (window.innerWidth < 479) {
+  const benSwiper = new Swiper("[benefits-swiper]", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: ".swiper-button.right",
+      prevEl: ".swiper-button.left",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}
+//END SWIPER FOR OPEN PRODUCTS PAGE
+
+// Select the elements
+const heroSection = document.querySelector("[custom-hero-section]");
+const globalHeader = document.querySelector("[global-header]");
+
+// Create the ScrollTrigger
+ScrollTrigger.create({
+  trigger: heroSection,
+  start: "top 1%",
+  end: "bottom 1%",
+  markers: true,
+  onEnter: () => globalHeader.classList.add("custom-dark-bg"), // Add class when entering
+  onLeave: () => globalHeader.classList.remove("custom-dark-bg"), // Remove class when leaving
+  onEnterBack: () => globalHeader.classList.add("custom-dark-bg"), // Add class when entering back
+  onLeaveBack: () => globalHeader.classList.remove("custom-dark-bg"), // Remove class when leaving back
+});
+
 const headerSection = document.querySelector(".section.for-header");
 
 window.addEventListener("scroll", () => {
