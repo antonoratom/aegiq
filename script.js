@@ -64,7 +64,7 @@ ScrollTrigger.create({
   trigger: heroSection,
   start: "top 1%",
   end: "bottom 1%",
-  markers: true,
+  // markers: true,
   onEnter: () => globalHeader.classList.add("custom-dark-bg"), // Add class when entering
   onLeave: () => globalHeader.classList.remove("custom-dark-bg"), // Remove class when leaving
   onEnterBack: () => globalHeader.classList.add("custom-dark-bg"), // Add class when entering back
@@ -81,77 +81,95 @@ window.addEventListener("scroll", () => {
   }
 });
 
-//Links reveal
 document.querySelectorAll(".nav-link_item").forEach((item) => {
   item.style.opacity = "0";
 });
+
+//NAV LINKS START
+
+// Links reveal Start
+document.querySelectorAll(".nav-link_item").forEach((item) => {
+  item.style.opacity = "0";
+});
+
 document.querySelectorAll(".nav-link_cont").forEach((container) => {
   const target = container.querySelector(".nav-link_target");
   const items = target.querySelectorAll(".nav-link_target-cont .nav-link_item");
 
-  document.querySelectorAll(".nav-link_cont").forEach((container) => {
-    const target = container.querySelector(".nav-link_target");
-    const items = target.querySelectorAll(
-      ".nav-link_target-cont .nav-link_item"
-    );
+  container.addEventListener("mouseenter", () => {
+    // Kill any ongoing animations on mouse enter to prevent conflicts
+    gsap.killTweensOf([target, items]);
 
-    container.addEventListener("mouseenter", () => {
-      gsap.to(target, {
-        height: "auto",
-        duration: 0.4,
-        ease: "power1.inOut",
-      });
-
-      gsap.to(items, {
-        opacity: 1,
-        duration: 0.6,
-        delay: 0.2, // Start this animation 0.2 seconds after the height animation begins
-        stagger: 0.1,
-        ease: "power1.inOut",
-      });
+    gsap.to(target, {
+      height: "auto",
+      duration: 0.4,
+      ease: "power1.inOut",
     });
 
-    container.addEventListener("mouseleave", () => {
-      gsap.to(items, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power1.inOut",
-      });
-      gsap.to(target, {
-        height: 0,
-        duration: 0.3,
-        ease: "power1.inOut",
-      });
+    gsap.to(items, {
+      opacity: 1,
+      duration: 0.6,
+      delay: 0.2, // Start this animation 0.2 seconds after the height animation begins
+      stagger: 0.1,
+      ease: "power1.inOut",
     });
   });
-  const trigger = document.querySelector("[mob-nav-stagger-trigger]");
-  const itemsTl = document.querySelectorAll("[mob-nav-stagger]");
 
-  let isOpen = false;
+  container.addEventListener("mouseleave", () => {
+    // Kill any ongoing animations on mouse leave to ensure the leave animation runs
+    gsap.killTweensOf([target, items]);
 
-  trigger.addEventListener("click", () => {
-    if (!isOpen) {
-      gsap.fromTo(
-        itemsTl,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power1.out",
-        }
-      );
-    } else {
-      gsap.to(itemsTl, {
-        opacity: 0,
-        duration: 0.4,
-        stagger: 0.1,
-        ease: "power1.in",
-      });
-    }
-    isOpen = !isOpen;
+    gsap.to(items, {
+      opacity: 0,
+      duration: 0.3,
+      ease: "power1.inOut",
+      onComplete: () => {
+        // Clear inline styles after animation completes
+        gsap.set(items, { clearProps: "opacity" });
+      },
+    });
+
+    gsap.to(target, {
+      height: 0,
+      duration: 0.3,
+      ease: "power1.inOut",
+      onComplete: () => {
+        // Clear inline styles after animation completes
+        gsap.set(target, { clearProps: "height" });
+      },
+    });
   });
 });
+
+const trigger = document.querySelector("[mob-nav-stagger-trigger]");
+const itemsTl = document.querySelectorAll("[mob-nav-stagger]");
+
+let isOpen = false;
+
+trigger.addEventListener("click", () => {
+  if (!isOpen) {
+    gsap.fromTo(
+      itemsTl,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power1.out",
+      }
+    );
+  } else {
+    gsap.to(itemsTl, {
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.1,
+      ease: "power1.in",
+    });
+  }
+  isOpen = !isOpen;
+});
+
+//NAV LINKS END
 
 document.addEventListener("click", function (e) {
   const modalSection = document.querySelector(".section.for-modal");
