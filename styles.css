@@ -1,3 +1,11 @@
+.custom-dark-bg {
+  :root {
+    --_colors---opacity--dark-opacity-s-60-40: var(
+      --_colors---opacity--dark-opacity-s-60-40
+    );
+  }
+}
+
 body.dark-mode {
   .anchor-nav-wrap .for-anchors {
     opacity: 0.4;
