@@ -308,7 +308,7 @@ if (document.querySelector(".swiper")) {
 
   //START SWIPER FOR ALL PRODUCTS PAGE
   if (window.innerWidth < 992) {
-    const swiper = new Swiper(".what-we-do_wrap", {
+    const swiper = new Swiper(".what-we-do_wrap.swiper", {
       slidesPerView: 1,
       spaceBetween: 16,
       navigation: {
@@ -345,5 +345,30 @@ if (document.querySelector(".swiper")) {
     });
   }
   //END SWIPER FOR OPEN PRODUCTS PAGE
+
+  //START SWIPER FOR OPEN ARTICLES PREVIEWS
+  if (window.innerWidth < 992) {
+  const swiperContainer = document.querySelector("[blog-preview]");
+  const newsSwiper = new Swiper(swiperContainer, {
+    spaceBetween: 16,
+    navigation: {
+      nextEl: swiperContainer.parentNode.querySelector(".swiper-button.right"),
+      prevEl: swiperContainer.parentNode.querySelector(".swiper-button.left"),
+    },
+    pagination: {
+      el: swiperContainer.parentNode.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+    breakpoints: {
+      200: {
+        slidesPerView: 1,
+      },
+      600: {
+        slidesPerView: 2,
+      },
+    },
+  });
+}
+  //END SWIPER FOR OPEN ARTICLES PREVIEWS
 }
 //END ALL SWIPERS

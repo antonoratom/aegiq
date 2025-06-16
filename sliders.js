@@ -46,7 +46,7 @@ const bigSwiperWrap = new Swiper("[big-card-swiper]", {
 
 //START SWIPER FOR ALL PRODUCTS PAGE
 if (window.innerWidth < 992) {
-  const swiper = new Swiper(".what-we-do_wrap", {
+  const swiper = new Swiper(".what-we-do_wrap.swiper", {
     slidesPerView: 1,
     spaceBetween: 16,
     navigation: {
