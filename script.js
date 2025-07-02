@@ -87,9 +87,12 @@ const updateCollectionItems = () => {
       ).length;
       const pubTarget = item.querySelector("[publication-guests-target]");
       if (pubTarget) {
-        if (pubGuests === 1) pubTarget.textContent = "+1 Guest";
-        else if (pubGuests > 1) pubTarget.textContent = `+${pubGuests} Guests`;
-        else {
+        pubTarget.style.display = "block"; // Ensure it's visible
+        if (pubGuests === 1) {
+          pubTarget.textContent = "+1 Guest";
+        } else if (pubGuests > 1) {
+          pubTarget.textContent = `+${pubGuests} Guests`;
+        } else {
           pubTarget.style.display = "none";
           const dot = pubTarget.nextElementSibling;
           if (dot?.hasAttribute("guests-dot")) dot.style.display = "none";
@@ -144,6 +147,7 @@ if (heroSection && globalHeader) {
     trigger: heroSection,
     start: "top 1%",
     end: "bottom 1%",
+    // markers: true,
     toggleClass: { targets: globalHeader, className: "custom-dark-bg" },
   });
 }
@@ -256,8 +260,21 @@ trigger.addEventListener("click", () => {
   }
   isOpen = !isOpen;
 });
-
 //NAV LINKS END
+
+//RESET ALL SCROLL TRIGGERS START
+let lastScrollTop = 0;
+let refreshTimeout;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (Math.abs(scrollTop - lastScrollTop) >= 200) {
+    lastScrollTop = scrollTop;
+    clearTimeout(refreshTimeout);
+    refreshTimeout = setTimeout(ScrollTrigger.refresh, 1500);
+  }
+});
+//RESET ALL SCROLL TRIGGERS END
 
 //START ALL SWIPERS
 if (document.querySelector(".swiper")) {
@@ -347,28 +364,30 @@ if (document.querySelector(".swiper")) {
   //END SWIPER FOR OPEN PRODUCTS PAGE
 
   //START SWIPER FOR OPEN ARTICLES PREVIEWS
-  if (window.innerWidth < 992) {
-  const swiperContainer = document.querySelector("[blog-preview]");
-  const newsSwiper = new Swiper(swiperContainer, {
-    spaceBetween: 16,
-    navigation: {
-      nextEl: swiperContainer.parentNode.querySelector(".swiper-button.right"),
-      prevEl: swiperContainer.parentNode.querySelector(".swiper-button.left"),
-    },
-    pagination: {
-      el: swiperContainer.parentNode.querySelector(".swiper-pagination"),
-      clickable: true,
-    },
-    breakpoints: {
-      200: {
-        slidesPerView: 1,
+  if (window.innerWidth < 990) {
+    const swiperContainer = document.querySelector("[blog-preview]");
+    const newsSwiper = new Swiper(swiperContainer, {
+      spaceBetween: 16,
+      navigation: {
+        nextEl: swiperContainer.parentNode.querySelector(
+          ".swiper-button.right"
+        ),
+        prevEl: swiperContainer.parentNode.querySelector(".swiper-button.left"),
       },
-      600: {
-        slidesPerView: 2,
+      pagination: {
+        el: swiperContainer.parentNode.querySelector(".swiper-pagination"),
+        clickable: true,
       },
-    },
-  });
-}
+      breakpoints: {
+        200: {
+          slidesPerView: 1,
+        },
+        500: {
+          slidesPerView: 2,
+        },
+      },
+    });
+  }
   //END SWIPER FOR OPEN ARTICLES PREVIEWS
 }
 //END ALL SWIPERS
