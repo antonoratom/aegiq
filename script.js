@@ -262,20 +262,6 @@ trigger.addEventListener("click", () => {
 });
 //NAV LINKS END
 
-//RESET ALL SCROLL TRIGGERS START
-let lastScrollTop = 0;
-let refreshTimeout;
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (Math.abs(scrollTop - lastScrollTop) >= 200) {
-    lastScrollTop = scrollTop;
-    clearTimeout(refreshTimeout);
-    refreshTimeout = setTimeout(ScrollTrigger.refresh, 1500);
-  }
-});
-//RESET ALL SCROLL TRIGGERS END
-
 //START ALL SWIPERS
 if (document.querySelector(".swiper")) {
   //START SWIPER FOR FEEDBACKS ON HOME PAGE
