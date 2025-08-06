@@ -67,118 +67,122 @@ if (globalHeader) {
 //START ALL SWIPERS
 if (document.querySelector(".swiper")) {
   //START SWIPER FOR FEEDBACKS ON HOME PAGE
-  const feedbackSwiper = new Swiper("[feedback-swiper]", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    navigation: {
-      nextEl: "[swiper-arrow-right='feedback']",
-      prevEl: "[swiper-arrow-left='feedback']",
-    },
-    pagination: {
-      el: "[swiper-pagination='feedback']",
-      clickable: true,
-    },
-  });
+  const feedbackSwiperElement = document.querySelector("[feedback-swiper]");
+  if (feedbackSwiperElement) {
+    const feedbackSwiper = new Swiper(feedbackSwiperElement, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: "[swiper-arrow-right='feedback']",
+        prevEl: "[swiper-arrow-left='feedback']",
+      },
+      pagination: {
+        el: "[swiper-pagination='feedback']",
+        clickable: true,
+      },
+    });
+  }
   //END SWIPER FOR FEEDBACKS ON HOME PAGE
 
   //START SWIPER FOR PRODUCTS ON MULTIPLE PAGES
-  const productsSwiper = new Swiper("[product-swiper]", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    navigation: {
-      nextEl: "[swiper-arrow-right='product']",
-      prevEl: "[swiper-arrow-left='product']",
-    },
-    pagination: {
-      el: "[swiper-pagination='product']",
-      clickable: true,
-    },
-  });
+  const productsSwiperElement = document.querySelector("[product-swiper]");
+  if (productsSwiperElement) {
+    const productsSwiper = new Swiper(productsSwiperElement, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: "[swiper-arrow-right='product']",
+        prevEl: "[swiper-arrow-left='product']",
+      },
+      pagination: {
+        el: "[swiper-pagination='product']",
+        clickable: true,
+      },
+    });
+  }
   //END SWIPER FOR PRODUCTS ON MULTIPLE PAGES
 
   //START SWIPER FOR EVENTS ON ABOUT US PAGE
-  const bigSwiperWrap = new Swiper("[big-card-swiper]", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    navigation: {
-      nextEl: ".swiper-button.right",
-      prevEl: ".swiper-button.left",
-    },
-    pagination: {
-      el: ".swiper-big-pagination",
-      clickable: true,
-    },
-  });
+  const bigSwiperWrapElement = document.querySelector("[big-card-swiper]");
+  if (bigSwiperWrapElement) {
+    const bigSwiperWrap = new Swiper(bigSwiperWrapElement, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: ".swiper-button.right",
+        prevEl: ".swiper-button.left",
+      },
+      pagination: {
+        el: ".swiper-big-pagination",
+        clickable: true,
+      },
+    });
+  }
   //END SWIPER FOR EVENTS ON ABOUT US PAGE
 
   //START SWIPER FOR ALL PRODUCTS PAGE
   if (window.innerWidth < 992) {
-    const swiper = new Swiper(".what-we-do_wrap.swiper", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      // navigation: {
-      //   nextEl: ".swiper-button.right",
-      //   prevEl: ".swiper-button.left",
-      // },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 0,
+    const whatWeDoWrapElement = document.querySelector(".what-we-do_wrap.swiper");
+    if (whatWeDoWrapElement) {
+      const swiper = new Swiper(whatWeDoWrapElement, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-      },
-    });
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+        },
+      });
+    }
   }
   //END SWIPER FOR ALL PRODUCTS PAGE
 
   //START SWIPER FOR OPEN PRODUCTS PAGE
   if (window.innerWidth < 479) {
-    const benSwiper = new Swiper("[benefits-swiper]", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      // navigation: {
-      //   nextEl: ".swiper-button.right",
-      //   prevEl: ".swiper-button.left",
-      // },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
+    const benefitsSwiperElement = document.querySelector("[benefits-swiper]");
+    if (benefitsSwiperElement) {
+      const benSwiper = new Swiper(benefitsSwiperElement, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
   }
   //END SWIPER FOR OPEN PRODUCTS PAGE
 
   //START SWIPER FOR OPEN ARTICLES PREVIEWS
   if (window.innerWidth < 990) {
     const swiperContainer = document.querySelector("[blog-preview]");
-    const newsSwiper = new Swiper(swiperContainer, {
-      spaceBetween: 16,
-      // navigation: {
-      //   nextEl: swiperContainer.parentNode.querySelector(
-      //     ".swiper-button.right"
-      //   ),
-      //   prevEl: swiperContainer.parentNode.querySelector(".swiper-button.left"),
-      // },
-      pagination: {
-        el: swiperContainer.parentNode.querySelector(".swiper-pagination"),
-        clickable: true,
-      },
-      breakpoints: {
-        200: {
-          slidesPerView: 1,
+    if (swiperContainer) {
+      const newsSwiper = new Swiper(swiperContainer, {
+        spaceBetween: 16,
+        pagination: {
+          el: swiperContainer.parentNode.querySelector(".swiper-pagination"),
+          clickable: true,
         },
-        500: {
-          slidesPerView: 2,
+        breakpoints: {
+          200: {
+            slidesPerView: 1,
+          },
+          500: {
+            slidesPerView: 2,
+          },
         },
-      },
-    });
+      });
+    }
   }
   //END SWIPER FOR OPEN ARTICLES PREVIEWS
 }
 //END ALL SWIPERS
+
 
 //PAGINATION OBSERVER
 document.addEventListener("DOMContentLoaded", function () {

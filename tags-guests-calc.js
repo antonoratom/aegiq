@@ -1,12 +1,15 @@
-const bigButtons = document.querySelectorAll('a[data-wf--button--variant="big"], a[data-wf--button--variant="secondary"]');
+document.addEventListener('DOMContentLoaded', () => {});
 
-bigButtons.forEach(button => {
-  const shadowWrap = document.createElement('div');
-  shadowWrap.className = 'button-shadow-wrap';
+const bigButtons = document.querySelectorAll(
+  'a[data-wf--button--variant="big"], a[data-wf--button--variant="secondary"]'
+);
+
+bigButtons.forEach((button) => {
+  const shadowWrap = document.createElement("div");
+  shadowWrap.className = "button-shadow-wrap";
   button.parentNode.replaceChild(shadowWrap, button);
   shadowWrap.appendChild(button);
 });
-
 
 //START PUBLICATIONS MODAL
 const modalSection = document.querySelector(".section.for-modal");
@@ -59,15 +62,19 @@ document.addEventListener("keydown", (e) => {
 //END PUBLICATIONS MODAL
 
 //START GUEST & TAGS RECALCULATIONS
-const collectionItemBl = document.querySelectorAll(".content-cli");
-
 // Check if publication-guests-trigger exists anywhere on the page
-const hasPublicationGuestsTrigger = document.querySelector("[publication-guests-trigger]") !== null;
+const hasPublicationGuestsTrigger =
+  document.querySelector("[publication-guests-trigger]") !== null;
+const collectionItemBl = document.querySelectorAll(".content-cli");
+const staticCategoryItem = document.querySelectorAll("[single-tag-item]");
 
 collectionItemBl.forEach((item, index) => {
-    const collectionItemWidth = item.offsetWidth - 64;
+    const collectionItemWidth = staticCategoryItem[index]
+        ? item.offsetWidth - 56 - staticCategoryItem[index].offsetWidth
+        : item.offsetWidth - 56;
     let tags = Array.from(item.querySelectorAll(".tag_cli"));
-
+    const tagContainer = item.querySelector(".tag_clw"); // Get the parent container
+    
     const calculateTotalTagWidth = () => {
         return tags.reduce((sum, tag) => sum + tag.offsetWidth, 0);
     };
@@ -83,25 +90,41 @@ collectionItemBl.forEach((item, index) => {
         hiddenTagsCount++;
     }
 
+    // Check if all tags are hidden and hide parent container
+    const allTagsInContainer = Array.from(item.querySelectorAll(".tag_cli"));
+    const visibleTags = allTagsInContainer.filter(tag => 
+        tag.style.display !== 'none' && 
+        getComputedStyle(tag).display !== 'none'
+    );
+    
+    if (visibleTags.length === 0 && tagContainer) {
+        tagContainer.style.display = 'none';
+    } else if (tagContainer) {
+        tagContainer.style.display = ''; // Show container if there are visible tags
+    }
+
     if (hiddenTagsCount > 0) {
         const forNumbersTag = item.querySelector(".item-card_tag.for-numbers");
-        forNumbersTag.style.display = 'block';
-        forNumbersTag.textContent = `+${hiddenTagsCount}`;
-    }
-
-    // Only execute this part if publication-guests-trigger exists on the page
-    if (hasPublicationGuestsTrigger) {
-        const pubGuests = item.querySelectorAll("[publication-guests-trigger]");
-        console.log(`Item ${index + 1}: Number of pubGuests: ${pubGuests.length}`);
-
-        const pubTarget = item.querySelector("[publication-guests-target]");
-        if (pubTarget && pubGuests.length == 1) {
-            pubTarget.textContent = `+ ${pubGuests.length} Guest`;
-        }
-        if (pubTarget && pubGuests.length > 1) {
-            pubTarget.textContent = `+ ${pubGuests.length} Guests`;
+        if (forNumbersTag) {
+            forNumbersTag.style.display = 'block';
+            forNumbersTag.textContent = `+${hiddenTagsCount}`;
         }
     }
+
+
+  // Only execute this part if publication-guests-trigger exists on the page
+  if (hasPublicationGuestsTrigger) {
+    const pubGuests = item.querySelectorAll("[publication-guests-trigger]");
+    console.log(`Item ${index + 1}: Number of pubGuests: ${pubGuests.length}`);
+
+    const pubTarget = item.querySelector("[publication-guests-target]");
+    if (pubTarget && pubGuests.length == 1) {
+      pubTarget.textContent = `+ ${pubGuests.length} Guest`;
+    }
+    if (pubTarget && pubGuests.length > 1) {
+      pubTarget.textContent = `+ ${pubGuests.length} Guests`;
+    }
+  }
 });
 
 //END GUEST & TAGS RECALCULATIONS
