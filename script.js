@@ -48,97 +48,9 @@ document.addEventListener("keydown", (e) => {
 });
 //END PUBLICATIONS MODAL
 
-//START GUEST & TAGS RECALCULATIONS
-const updateCollectionItems = () => {
-  const hasPublications = document.querySelector("[publication-guests-amount]");
-  const hasPodcasts = document.querySelector(".host-guest_cli");
 
-  document.querySelectorAll(".content-cli").forEach((item) => {
-    const items = item.querySelectorAll("[items-to-calc]");
-    const limit = item.offsetWidth * 0.7;
-    let width = 0,
-      top = null,
-      hidden = 0;
 
-    items.forEach((el) => {
-      const w = el.offsetWidth,
-        t = el.offsetTop;
-      if (top === null) top = t;
-
-      if (t === top && width + w <= limit) {
-        width += w;
-        el.style.display = "block";
-      } else {
-        el.style.display = "none";
-        hidden++;
-      }
-    });
-
-    const counter = item.querySelector("[items-amount]");
-    if (counter) {
-      counter.textContent = `+${hidden}`;
-      const parent = counter.parentElement;
-      parent.style.display = hidden > 0 ? "block" : "none";
-    }
-
-    if (hasPublications) {
-      const pubGuests = item.querySelectorAll(
-        "[publication-guests-amount]"
-      ).length;
-      const pubTarget = item.querySelector("[publication-guests-target]");
-      if (pubTarget) {
-        pubTarget.style.display = "block"; // Ensure it's visible
-        if (pubGuests === 1) {
-          pubTarget.textContent = "+1 Guest";
-        } else if (pubGuests > 1) {
-          pubTarget.textContent = `+${pubGuests} Guests`;
-        } else {
-          pubTarget.style.display = "none";
-          const dot = pubTarget.nextElementSibling;
-          if (dot?.hasAttribute("guests-dot")) dot.style.display = "none";
-        }
-      }
-    }
-
-    if (hasPodcasts) {
-      const podcastGuests = item.querySelectorAll(".host-guest_cli").length - 1;
-      const podcastTarget = item.querySelector("[guests-target]");
-      if (podcastTarget) {
-        if (podcastGuests === 1) podcastTarget.textContent = "+1 Guest";
-        else if (podcastGuests > 1)
-          podcastTarget.textContent = `+${podcastGuests} Guests`;
-        else {
-          podcastTarget.style.display = "none";
-          const dot = podcastTarget.nextElementSibling;
-          if (dot?.hasAttribute("guests-dot")) dot.style.display = "none";
-        }
-      }
-    }
-  });
-};
-
-const observeCollectionListUpdates = () => {
-  const node = document.querySelector(".content-cl");
-  if (!node) return;
-
-  const config = { childList: true, subtree: true };
-
-  const observer = new MutationObserver((mutations, obs) => {
-    if (mutations.some((m) => m.type === "childList")) {
-      obs.disconnect();
-      updateCollectionItems();
-      obs.observe(node, config);
-    }
-  });
-
-  observer.observe(node, config);
-};
-
-updateCollectionItems();
-observeCollectionListUpdates();
-//END GUEST & TAGS RECALCULATIONS
-
-//HERO SCROLL START
+// HERO SCROLL START
 const heroSection = document.querySelector("[custom-hero-section]");
 const globalHeader = document.querySelector("[global-header]");
 
@@ -151,10 +63,16 @@ if (heroSection && globalHeader) {
     toggleClass: { targets: globalHeader, className: "custom-dark-bg" },
   });
 }
+
 const headerSection = document.querySelector(".section.for-header");
 
 if (headerSection) {
   let isBlurred = false;
+
+  // Get initial padding values
+  const computedStyle = window.getComputedStyle(headerSection);
+  const initialPaddingTop = parseFloat(computedStyle.paddingTop);
+  const initialPaddingBottom = parseFloat(computedStyle.paddingBottom);
 
   window.addEventListener("scroll", () => {
     const scrolledPast = window.scrollY > 100;
@@ -164,6 +82,8 @@ if (headerSection) {
       gsap.to(headerSection, {
         backdropFilter: "blur(20px)",
         backgroundColor: "var(--_colors---opacity--light-opacity-s-40-60)",
+        paddingTop: initialPaddingTop / 2 + "px",
+        paddingBottom: initialPaddingBottom / 2 + "px",
         duration: 0.3,
       });
     } else if (!scrolledPast && isBlurred) {
@@ -171,96 +91,99 @@ if (headerSection) {
       gsap.to(headerSection, {
         backdropFilter: "blur(0px)",
         backgroundColor: "transparent",
+        paddingTop: initialPaddingTop + "px",
+        paddingBottom: initialPaddingBottom + "px",
         duration: 0.3,
       });
     }
   });
 }
+
 //HERO SCROLL END
 
-//NAV LINKS START
-// Links reveal Start
-document.querySelectorAll(".nav-link_item").forEach((item) => {
-  item.style.opacity = "0";
-});
+// //NAV LINKS START
+// // Links reveal Start
+// document.querySelectorAll(".nav-link_item").forEach((item) => {
+//   item.style.opacity = "0";
+// });
 
-document.querySelectorAll(".nav-link_cont").forEach((container) => {
-  const target = container.querySelector(".nav-link_target");
-  const items = target.querySelectorAll(".nav-link_target-cont .nav-link_item");
+// document.querySelectorAll(".nav-link_cont").forEach((container) => {
+//   const target = container.querySelector(".nav-link_target");
+//   const items = target.querySelectorAll(".nav-link_target-cont .nav-link_item");
 
-  container.addEventListener("mouseenter", () => {
-    // Kill any ongoing animations on mouse enter to prevent conflicts
-    gsap.killTweensOf([target, items]);
+//   container.addEventListener("mouseenter", () => {
+//     // Kill any ongoing animations on mouse enter to prevent conflicts
+//     gsap.killTweensOf([target, items]);
 
-    gsap.to(target, {
-      height: "auto",
-      duration: 0.4,
-      ease: "power1.inOut",
-    });
+//     gsap.to(target, {
+//       height: "auto",
+//       duration: 0.4,
+//       ease: "power1.inOut",
+//     });
 
-    gsap.to(items, {
-      opacity: 1,
-      duration: 0.6,
-      delay: 0.2, // Start this animation 0.2 seconds after the height animation begins
-      stagger: 0.1,
-      ease: "power1.inOut",
-    });
-  });
+//     gsap.to(items, {
+//       opacity: 1,
+//       duration: 0.6,
+//       delay: 0.2, // Start this animation 0.2 seconds after the height animation begins
+//       stagger: 0.1,
+//       ease: "power1.inOut",
+//     });
+//   });
 
-  container.addEventListener("mouseleave", () => {
-    // Kill any ongoing animations on mouse leave to ensure the leave animation runs
-    gsap.killTweensOf([target, items]);
+//   container.addEventListener("mouseleave", () => {
+//     // Kill any ongoing animations on mouse leave to ensure the leave animation runs
+//     gsap.killTweensOf([target, items]);
 
-    gsap.to(items, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power1.inOut",
-      onComplete: () => {
-        // Clear inline styles after animation completes
-        gsap.set(items, { clearProps: "opacity" });
-      },
-    });
+//     gsap.to(items, {
+//       opacity: 0,
+//       duration: 0.3,
+//       ease: "power1.inOut",
+//       onComplete: () => {
+//         // Clear inline styles after animation completes
+//         gsap.set(items, { clearProps: "opacity" });
+//       },
+//     });
 
-    gsap.to(target, {
-      height: 0,
-      duration: 0.3,
-      ease: "power1.inOut",
-      onComplete: () => {
-        // Clear inline styles after animation completes
-        gsap.set(target, { clearProps: "height" });
-      },
-    });
-  });
-});
+//     gsap.to(target, {
+//       height: 0,
+//       duration: 0.3,
+//       ease: "power1.inOut",
+//       onComplete: () => {
+//         // Clear inline styles after animation completes
+//         gsap.set(target, { clearProps: "height" });
+//       },
+//     });
+//   });
+// });
 
-const trigger = document.querySelector("[mob-nav-stagger-trigger]");
-const itemsTl = document.querySelectorAll("[mob-nav-stagger]");
+// const trigger = document.querySelector("[mob-nav-stagger-trigger]");
+// const itemsTl = document.querySelectorAll("[mob-nav-stagger]");
 
-let isOpen = false;
+// let isOpen = false;
 
-trigger.addEventListener("click", () => {
-  if (!isOpen) {
-    gsap.fromTo(
-      itemsTl,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power1.out",
-      }
-    );
-  } else {
-    gsap.to(itemsTl, {
-      opacity: 0,
-      duration: 0.4,
-      stagger: 0.1,
-      ease: "power1.in",
-    });
-  }
-  isOpen = !isOpen;
-});
-//NAV LINKS END
+// trigger.addEventListener("click", () => {
+//   if (!isOpen) {
+//     gsap.fromTo(
+//       itemsTl,
+//       { opacity: 0 },
+//       {
+//         opacity: 1,
+//         duration: 1,
+//         stagger: 0.2,
+//         ease: "power1.out",
+//       }
+//     );
+//   } else {
+//     gsap.to(itemsTl, {
+//       opacity: 0,
+//       duration: 0.4,
+//       stagger: 0.1,
+//       ease: "power1.in",
+//     });
+//   }
+//   isOpen = !isOpen;
+// });
+// //NAV LINKS END
 
 //START ALL SWIPERS
 if (document.querySelector(".swiper")) {

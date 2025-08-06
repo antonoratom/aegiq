@@ -1,950 +1,3 @@
-.custom-dark-bg {
-  :root {
-    --_colors---opacity--dark-opacity-s-60-40: var(
-      --_colors---opacity--dark-opacity-s-60-40
-    );
-  }
-}
-
-body.dark-mode {
-  .anchor-nav-wrap .for-anchors {
-    opacity: 0.4;
-  }
-  .sort-link_item:has(.radio-tick:checked) {
-    color: white !important;
-    background-color: hsba(240, 61%, 49%, 0.25) !important;
-  }
-  .btn:hover,
-  .tabs-filters_radio-wrap:has(.radio-tick:checked) .tabs-filters_line {
-    background-color: var(--_colors---text--light-mode-primary-100);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .btn.link-xs:hover {
-    background-color: transparent;
-    text-shadow: 0px 0px 18px rgba(81, 82, 218, 0.75);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0);
-  }
-
-  ul li::before {
-    background-color: var(--_colors---brand-colors--soft-purple);
-  }
-  ol li::marker {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-  .tl_line {
-    background-color: var(--_colors---text--light-mode-primary-10);
-  }
-  .tl_circle {
-    border-color: var(--_colors---text--light-mode-primary-10);
-  }
-  .tl_circle.active {
-    border-color: var(--_colors---text--gray-50);
-    background-color: var(--_colors---text--gray-50);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .tl_line-growth {
-    background-color: var(--_colors---text--light-mode-secondary-80);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .eyebrow {
-    text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-  }
-  .item-card_bl .download-btn .u-icon {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-
-  .item-card_bl:hover {
-    [card-title] {
-      color: var(--_colors---text--light-mode-primary-100);
-      text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-    }
-    [card-subtitle] {
-      color: var(--_colors---text--light-mode-primary-100);
-      text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-    }
-    .download-btn .u-icon {
-      color: var(--_colors---brand-colors--soft-purple);
-    }
-  }
-  .item-card_tag {
-    background-color: var(--_colors---background--secondary-bg);
-  }
-  .item-card_bl.feedback-person {
-    background-color: var(--_colors---background--secondary-bg);
-  }
-  .item-card_bl.medium-for-logo {
-    color: #fff;
-  }
-  .item-card_bl.medium-for-logo:hover {
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-    background-color: var(--_colors---brand-colors--tech-purple);
-  }
-  .item-card_bl.medium-for-logo:focused {
-    outline: var(--_colors---brand-colors--soft-purple) solid 3px;
-    outline-offset: 0px;
-    background-color: var(--_colors---text--light-mode-secondary-80);
-  }
-  .item-card_bl.medium-for-logo:active {
-    background-color: var(--_colors---text--light-mode-secondary-80);
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-  }
-  .nav-link_target {
-    background-color: rgba(25, 24, 39, 0.4);
-  }
-  .sort-link_target {
-    background-color: rgba(24, 38, 39, 0.4);
-  }
-}
-.tl_circle.active {
-  border: 3px solid var(--_colors---brand-colors--tech-purple);
-}
-.item-card_bl:hover {
-  [card-title] {
-    color: var(--_colors---brand-colors--tech-purple);
-  }
-  [card-subtitle] {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-}
-.item-card_bl.medium-for-logo:hover {
-  background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
-  color: var(--_colors---brand-colors--tech-purple);
-}
-.item-card_bl.medium-for-logo:focused {
-  outline: var(--_colors---brand-colors--soft-purple) solid 3px;
-  outline-offset: 0px;
-}
-.item-card_bl.medium-for-logo:active {
-  background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-  color: var(--_colors---text--light-mode-primary-100);
-}
-.subscribe-form_success-icon-wrap {
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
-}
-/* BURGER OPEN START */
-@media screen and (max-width: 991px) {
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(1) {
-    transform: rotate(45deg);
-    top: 4.5px;
-  }
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(2) {
-    width: 0px;
-  }
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(3) {
-    transform: rotate(-45deg);
-    bottom: 4.5px;
-  }
-  .header-links_wrap {
-    display: grid;
-    grid-template-rows: 0dvh;
-    transition: grid-template-rows 0ms;
-  }
-  .section.for-header:has(.burger-checkbox:checked) .burger-bg {
-    opacity: 1;
-  }
-  .section.for-header:has(.burger-checkbox:checked) {
-    z-index: 1001;
-  }
-  .nav-link_target {
-    background-color: transparent !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--1-5rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-@media (min-width: 480px) and (max-width: 767px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--1rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-@media (min-width: 180px) and (max-width: 479px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--0-5rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-/* BURGER OPEN END */
-
-/* Remove top margin on rich text first child */
-.w-richtext > :first-child {
-  margin-top: 0;
-}
-
-/* Remove bottom margin of rich text last child */
-.w-richtext > :last-child,
-.w-richtext ol li:last-child,
-.w-richtext ul li:last-child {
-  margin-bottom: 0;
-}
-/* Applies an underline to any h1-h6 or p with an anchor link inside. */
-:is(h1, h2, h3, h4, h5, h6, p) a {
-  text-decoration: underline;
-  /* Add or remove any rules here */
-}
-
-video {
-  width: 100%;
-  object-fit: cover;
-}
-
-video.wf-empty {
-  padding: 0;
-}
-/* Hide an object on the canvas but keep it's order in the DOM. Great for making an invisible space in a grid or flexbox. */
-.u-invisible {
-  visibility: hidden;
-}
-
-/* Applies line clamping to the .u-tlc class */
-.u-clamp {
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  &.cc-2 {
-    -webkit-line-clamp: 2;
-  }
-  &.cc-3 {
-    -webkit-line-clamp: 3;
-  }
-}
-
-/* Changes the color of the default Webflow lightbox color */
-.w-lightbox-backdrop {
-  background: rgba(10, 2, 122, 0.8) !important;
-}
-
-/* Desktop (992px and above) */
-@media screen and (min-width: 992px) {
-  .u-md-only,
-  .u-sm-only,
-  .u-xs-only {
-    display: none;
-  }
-}
-
-/* Tablet (768px to 991px) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .u-sm-only,
-  .u-xs-only,
-  .u-lg-only {
-    display: none;
-  }
-}
-
-/* Mobile Landscape (480px to 767px) */
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  .u-lg-only,
-  .u-md-only,
-  .u-xs-only {
-    display: none;
-  }
-}
-
-/* Mobile Portrait (up to 479px) */
-@media screen and (max-width: 479px) {
-  .u-lg-only,
-  .u-md-only,
-  .u-sm-only {
-    display: none;
-  }
-}
-
-/* Ordered & Unordered lists */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  position: relative;
-  padding-left: var(--_spacing---spacing-utility-rem--2rem);
-}
-
-ul li::before {
-  content: "";
-  position: absolute;
-  left: var(--_spacing---spacing-utility-rem--0-5rem);
-  top: var(--_spacing---spacing-utility-rem--0-5rem);
-  width: var(--_spacing---spacing-utility-rem--0-5rem);
-  height: var(--_spacing---spacing-utility-rem--0-5rem);
-  background-color: var(
-    --_colors---brand-colors--bright-orange
-  ); /* Replace with your desired color */
-  border-radius: 50%; /* Makes the square a circle */
-}
-
-ol {
-  padding-left: var(--_spacing---spacing-utility-rem--1-5rem);
-}
-
-ol li {
-  padding-left: 0.5rem;
-}
-
-ol li::marker {
-  color: var(--_colors---brand-colors--bright-orange);
-}
-.breadcrumbs_wrap {
-  text-transform: uppercase;
-  [data-wf--button--variant="link-xs"] {
-    padding: 0px !important;
-  }
-}
-.rich-text-content h2 + h3 {
-  margin-top: 0px;
-}
-.rich-text-content h3 + h4 {
-  margin-top: 0px;
-}
-
-@media (min-width: 1440px) and (max-width: 3200px) {
-  :root {
-    --_spacing---spacing-utility-rem--0-125rem: clamp(
-      0.125rem,
-      0.0448rem + 0.0891vw,
-      0.278rem
-    );
-    --_spacing---spacing-utility-rem--0-25rem: clamp(
-      0.25rem,
-      0.0095rem + 0.2673vw,
-      0.556rem
-    );
-    --_spacing---spacing-utility-rem--0-5rem: clamp(
-      0.5rem,
-      0.1793rem + 0.3563vw,
-      1.111rem
-    );
-    --_spacing---spacing-utility-rem--0-75rem: clamp(
-      0.75rem,
-      0.2689rem + 0.5345vw,
-      1.668rem
-    );
-    --_spacing---spacing-utility-rem--0-875rem: clamp(
-      0.875rem,
-      0.3138rem + 0.6236vw,
-      1.945rem
-    );
-    --_spacing---spacing-utility-rem--1rem: clamp(
-      1rem,
-      0.5189rem + 0.5345vw,
-      2.223rem
-    );
-    --_spacing---spacing-utility-rem--1-125rem: clamp(
-      1.125rem,
-      0.4034rem + 0.8018vw,
-      2.501rem
-    );
-    --_spacing---spacing-utility-rem--1-25rem: clamp(
-      1.25rem,
-      0.4482rem + 0.8909vw,
-      2.778rem
-    );
-    --_spacing---spacing-utility-rem--1-5rem: clamp(
-      1.5rem,
-      0.5379rem + 1.069vw,
-      3.334rem
-    );
-    --_spacing---spacing-utility-rem--1-75rem: clamp(
-      1.75rem,
-      0.6275rem + 1.2472vw,
-      3.891rem
-    );
-    --_spacing---spacing-utility-rem--2rem: clamp(
-      2rem,
-      0.8775rem + 1.2472vw,
-      4.446rem
-    );
-    --_spacing---spacing-utility-rem--2-5rem: clamp(
-      2.5rem,
-      0.5757rem + 2.1381vw,
-      5.556rem
-    );
-    --_spacing---spacing-utility-rem--3rem: clamp(
-      3rem,
-      1.0757rem + 2.1381vw,
-      6.669rem
-    );
-    --_spacing---spacing-utility-rem--3-5rem: clamp(
-      3.5rem,
-      1.255rem + 2.4944vw,
-      7.781rem
-    );
-    --_spacing---spacing-utility-rem--4rem: clamp(
-      4rem,
-      0.7929rem + 3.5635vw,
-      8.892rem
-    );
-    --_spacing---spacing-utility-rem--5rem: clamp(
-      5rem,
-      0.1893rem + 5.3452vw,
-      11.115rem
-    );
-    --_spacing---spacing-utility-rem--5-5rem: clamp(
-      5.5rem,
-      -0.0163rem + 6.1292vw,
-      12.226rem
-    );
-    --_spacing---spacing-utility-rem--6rem: clamp(
-      6rem,
-      0.2272rem + 6.4143vw,
-      13.338rem
-    );
-    --_spacing---spacing-utility-rem--7rem: clamp(
-      7rem,
-      -0.0557rem + 7.8396vw,
-      15.558rem
-    );
-    --_spacing---spacing-utility-rem--7-5rem: clamp(
-      7.5rem,
-      0.1236rem + 8.196vw,
-      16.669rem
-    );
-    --_spacing---spacing-utility-rem--8rem: clamp(
-      8rem,
-      -0.0178rem + 8.9087vw,
-      17.781rem
-    );
-    --_spacing---spacing-utility-rem--8-5rem: clamp(
-      8.5rem,
-      0.0011rem + 9.4432vw,
-      18.892rem
-    );
-    --_spacing---spacing-utility-rem--9rem: clamp(
-      9rem,
-      0.02rem + 9.9777vw,
-      20.004rem
-    );
-    --_spacing---spacing-utility-rem--10rem: clamp(
-      10rem,
-      0.0579rem + 11.0468vw,
-      22.23rem
-    );
-    --_spacing---spacing-layout--container-max-width-90: clamp(
-      90rem,
-      0.0016rem + 99.9982vw,
-      200.07rem
-    );
-
-    /* FONTS */
-    --_fonts---type-h1--font-size: clamp(5rem, -0.0031rem + 5.559vw, 11.115rem);
-    --_fonts---type-h2--font-size: clamp(3.5rem, 0.0042rem + 3.8842vw, 7.78rem);
-    --_fonts---type-h3--font-size: clamp(3rem, -0.0147rem + 3.3497vw, 6.669rem);
-    --_fonts---type-h4--font-size: clamp(
-      2.375rem,
-      -0.0182rem + 2.6591vw,
-      5.3rem
-    );
-    --_fonts---type-h5--font-size: clamp(
-      1.875rem,
-      -0.0027rem + 2.0864vw,
-      4.17rem
-    );
-    --_fonts---type-h6--font-size: clamp(
-      1.5rem,
-      -0.0055rem + 1.6727vw,
-      3.34rem
-    );
-    --_fonts---type-body--font-size: clamp(
-      0.875rem,
-      -0.0045rem + 0.9773vw,
-      1.95rem
-    );
-    --_fonts---type-eyebrow--font-size: clamp(
-      0.75rem,
-      -0.0273rem + 0.8636vw,
-      1.7rem
-    );
-    --_fonts---type-paragraph-14--font-size: clamp(
-      0.875rem,
-      0.0364rem + 0.9318vw,
-      1.9rem
-    );
-    --_fonts---type-paragraph-16--font-size: clamp(
-      1rem,
-      -0.0636rem + 1.1818vw,
-      2.3rem
-    );
-    --_fonts---type-paragraph-18--font-size: clamp(
-      1.125rem,
-      0rem + 1.25vw,
-      2.5rem
-    );
-    --_fonts---type-paragraph-20--font-size: clamp(
-      1.25rem,
-      -0.0018rem + 1.3909vw,
-      2.78rem
-    );
-  }
-}
-@media (min-width: 991px) and (max-width: 1439px) {
-  :root {
-    --_spacing---spacing-utility-rem--0-125rem: clamp(
-      0.1rem,
-      0.0448rem + 0.0891vw,
-      0.125rem
-    );
-    --_spacing---spacing-utility-rem--0-25rem: clamp(
-      0.175rem,
-      0.0095rem + 0.2673vw,
-      0.25rem
-    );
-    --_spacing---spacing-utility-rem--0-5rem: clamp(
-      0.4rem,
-      0.1793rem + 0.3563vw,
-      0.5rem
-    );
-    --_spacing---spacing-utility-rem--0-75rem: clamp(
-      0.6rem,
-      0.2689rem + 0.5345vw,
-      0.75rem
-    );
-    --_spacing---spacing-utility-rem--0-875rem: clamp(
-      0.7rem,
-      0.3138rem + 0.6236vw,
-      0.875rem
-    );
-    --_spacing---spacing-utility-rem--1rem: clamp(
-      0.85rem,
-      0.5189rem + 0.5345vw,
-      1rem
-    );
-    --_spacing---spacing-utility-rem--1-125rem: clamp(
-      0.9rem,
-      0.4034rem + 0.8018vw,
-      1.125rem
-    );
-    --_spacing---spacing-utility-rem--1-25rem: clamp(
-      1rem,
-      0.4482rem + 0.8909vw,
-      1.25rem
-    );
-    --_spacing---spacing-utility-rem--1-5rem: clamp(
-      1.2rem,
-      0.5379rem + 1.069vw,
-      1.5rem
-    );
-    --_spacing---spacing-utility-rem--1-75rem: clamp(
-      1.4rem,
-      0.6275rem + 1.2472vw,
-      1.75rem
-    );
-    --_spacing---spacing-utility-rem--2rem: clamp(
-      1.65rem,
-      0.8775rem + 1.2472vw,
-      2rem
-    );
-    --_spacing---spacing-utility-rem--2-5rem: clamp(
-      1.9rem,
-      0.5757rem + 2.1381vw,
-      2.5rem
-    );
-    --_spacing---spacing-utility-rem--3rem: clamp(
-      2.4rem,
-      1.0757rem + 2.1381vw,
-      3rem
-    );
-    --_spacing---spacing-utility-rem--3-5rem: clamp(
-      2.8rem,
-      1.255rem + 2.4944vw,
-      3.5rem
-    );
-    --_spacing---spacing-utility-rem--4rem: clamp(
-      3rem,
-      0.7929rem + 3.5635vw,
-      4rem
-    );
-    --_spacing---spacing-utility-rem--5rem: clamp(
-      3.5rem,
-      0.1893rem + 5.3452vw,
-      5rem
-    );
-    --_spacing---spacing-utility-rem--5-5rem: clamp(
-      3.78rem,
-      -0.0163rem + 6.1292vw,
-      5.5rem
-    );
-    --_spacing---spacing-utility-rem--6rem: clamp(
-      4.2rem,
-      0.2272rem + 6.4143vw,
-      6rem
-    );
-    --_spacing---spacing-utility-rem--7rem: clamp(
-      4.8rem,
-      -0.0557rem + 7.8396vw,
-      7rem
-    );
-    --_spacing---spacing-utility-rem--7-5rem: clamp(
-      5.2rem,
-      0.1236rem + 8.196vw,
-      7.5rem
-    );
-    --_spacing---spacing-utility-rem--8rem: clamp(
-      5.5rem,
-      -0.0178rem + 8.9087vw,
-      8rem
-    );
-    --_spacing---spacing-utility-rem--8-5rem: clamp(
-      5.85rem,
-      0.0011rem + 9.4432vw,
-      8.5rem
-    );
-    --_spacing---spacing-utility-rem--9rem: clamp(
-      6.2rem,
-      0.02rem + 9.9777vw,
-      9rem
-    );
-    --_spacing---spacing-utility-rem--10rem: clamp(
-      6.9rem,
-      0.0579rem + 11.0468vw,
-      10rem
-    );
-    --_spacing---spacing-layout--container-max-width-90: clamp(
-      61.938rem,
-      0.0016rem + 99.9982vw,
-      90rem
-    );
-
-    /* FONTS */
-    --_fonts---type-h1--font-size: clamp(3.44rem, -0.0031rem + 5.559vw, 5rem);
-    --_fonts---type-h2--font-size: clamp(2.41rem, 0.0042rem + 3.8842vw, 3.5rem);
-    --_fonts---type-h3--font-size: clamp(2.06rem, -0.0147rem + 3.3497vw, 3rem);
-    --_fonts---type-h4--font-size: clamp(
-      1.63rem,
-      -0.0143rem + 2.6548vw,
-      2.375rem
-    );
-    --_fonts---type-h5--font-size: clamp(
-      1.29rem,
-      -0.0012rem + 2.0846vw,
-      1.875rem
-    );
-    --_fonts---type-h6--font-size: clamp(
-      1.03rem,
-      -0.0073rem + 1.6748vw,
-      1.5rem
-    );
-    --_fonts---type-body--font-size: clamp(
-      0.6rem,
-      -0.007rem + 0.98vw,
-      0.875rem
-    );
-    --_fonts---type-eyebrow--font-size: clamp(
-      0.52rem,
-      0.0124rem + 0.8196vw,
-      0.75rem
-    );
-    --_fonts---type-paragraph-14--font-size: clamp(
-      0.7rem,
-      0.3138rem + 0.6236vw,
-      0.875rem
-    );
-    --_fonts---type-paragraph-16--font-size: clamp(
-      0.85rem,
-      0.5189rem + 0.5345vw,
-      1rem
-    );
-    --_fonts---type-paragraph-18--font-size: clamp(
-      0.77rem,
-      -0.0135rem + 1.265vw,
-      1.125rem
-    );
-    --_fonts---type-paragraph-20--font-size: clamp(
-      0.86rem,
-      -0.0008rem + 1.3898vw,
-      1.25rem
-    );
-  }
-}
-
-body.dark-mode {
-  .anchor-nav-wrap .for-anchors {
-    opacity: 0.4;
-  }
-  .sort-link_item:has(.radio-tick:checked) {
-    color: white !important;
-    background-color: hsba(240, 61%, 49%, 0.25) !important;
-  }
-  .btn:hover,
-  .tabs-filters_radio-wrap:has(.radio-tick:checked) .tabs-filters_line {
-    background-color: var(--_colors---text--light-mode-primary-100);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .btn.link-xs:hover {
-    background-color: transparent;
-    text-shadow: 0px 0px 18px rgba(81, 82, 218, 0.75);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0);
-  }
-
-  ul li::before {
-    background-color: var(--_colors---brand-colors--soft-purple);
-  }
-  ol li::marker {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-  .tl_line {
-    background-color: var(--_colors---text--light-mode-primary-10);
-  }
-  .tl_circle {
-    border-color: var(--_colors---text--light-mode-primary-10);
-  }
-  .tl_circle.active {
-    border-color: var(--_colors---text--gray-50);
-    background-color: var(--_colors---text--gray-50);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .tl_line-growth {
-    background-color: var(--_colors---text--light-mode-secondary-80);
-    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .eyebrow {
-    text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-  }
-  .item-card_bl .download-btn .u-icon {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-
-  .item-card_bl:hover {
-    [card-title] {
-      color: var(--_colors---text--light-mode-primary-100);
-      text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-    }
-    [card-subtitle] {
-      color: var(--_colors---text--light-mode-primary-100);
-      text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
-    }
-    .download-btn .u-icon {
-      color: var(--_colors---brand-colors--soft-purple);
-    }
-  }
-  .item-card_tag {
-    background-color: var(--_colors---background--secondary-bg);
-  }
-  .item-card_bl.feedback-person {
-    background-color: var(--_colors---background--secondary-bg);
-  }
-  .item-card_bl.medium-for-logo {
-    color: #fff;
-  }
-  .item-card_bl.medium-for-logo:hover {
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-    background-color: var(--_colors---brand-colors--tech-purple);
-  }
-  .item-card_bl.medium-for-logo:focused {
-    outline: var(--_colors---brand-colors--soft-purple) solid 3px;
-    outline-offset: 0px;
-    background-color: var(--_colors---text--light-mode-secondary-80);
-  }
-  .item-card_bl.medium-for-logo:active {
-    background-color: var(--_colors---text--light-mode-secondary-80);
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-  }
-  .nav-link_target {
-    background-color: rgba(25, 24, 39, 0.4);
-  }
-  .sort-link_target {
-    background-color: rgba(24, 38, 39, 0.4);
-  }
-}
-.tl_circle.active {
-  border: 3px solid var(--_colors---brand-colors--tech-purple);
-}
-.item-card_bl:hover {
-  [card-title] {
-    color: var(--_colors---brand-colors--tech-purple);
-  }
-  [card-subtitle] {
-    color: var(--_colors---brand-colors--soft-purple);
-  }
-}
-.item-card_bl.medium-for-logo:hover {
-  background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
-  color: var(--_colors---brand-colors--tech-purple);
-}
-.item-card_bl.medium-for-logo:focused {
-  outline: var(--_colors---brand-colors--soft-purple) solid 3px;
-  outline-offset: 0px;
-}
-.item-card_bl.medium-for-logo:active {
-  background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-  color: var(--_colors---text--light-mode-primary-100);
-}
-.subscribe-form_success-icon-wrap {
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
-}
-
-/* MODE SWITCHER START */
-@keyframes widen {
-  0% {
-    width: var(--_spacing---spacing-utility-rem--2rem);
-    height: var(--_spacing---spacing-utility-rem--2rem);
-    backdrop-filter: blur(0px);
-    box-shadow: rgba(81, 82, 218, 0) 0px 2px 18px 0px;
-  }
-  30% {
-    width: var(--_spacing---spacing-utility-rem--2-5rem);
-    height: var(--_spacing---spacing-utility-rem--1-75rem);
-    backdrop-filter: blur(4px);
-    box-shadow: rgba(81, 82, 218, 0.05) 0px 2px 18px 0px;
-  }
-  100% {
-    width: var(--_spacing---spacing-utility-rem--2rem);
-    height: var(--_spacing---spacing-utility-rem--2rem);
-    backdrop-filter: blur(0px);
-    box-shadow: rgba(81, 82, 218, 0) 0px 2px 18px 0px;
-  }
-}
-
-@keyframes widen-reverse {
-  0% {
-    width: var(--_spacing---spacing-utility-rem--2rem);
-    height: var(--_spacing---spacing-utility-rem--2rem);
-    backdrop-filter: blur(0px);
-    box-shadow: rgba(81, 82, 218, 0) 0px 2px 18px 0px;
-  }
-  30% {
-    width: var(--_spacing---spacing-utility-rem--2-5rem);
-    height: var(--_spacing---spacing-utility-rem--1-75rem);
-    backdrop-filter: blur(4px);
-    box-shadow: rgba(81, 82, 218, 0.05) 0px 2px 18px 0px;
-  }
-  100% {
-    width: var(--_spacing---spacing-utility-rem--2rem);
-    height: var(--_spacing---spacing-utility-rem--2rem);
-    backdrop-filter: blur(0px);
-    box-shadow: rgba(81, 82, 218, 0) 0px 2px 18px 0px;
-  }
-}
-
-.mode-bg {
-  left: 0%;
-}
-
-.checkbox-container:has(.checkbox:checked) .mode-bg {
-  left: 100%;
-  transform: translate(-100%, 0px);
-  animation: widen 0.3s ease-in-out;
-}
-
-.checkbox-container:has(.checkbox:not(:checked)) .mode-bg {
-  left: 0%;
-  transform: translate(0%, 0px);
-  animation: widen-reverse 0.3s ease-in-out;
-}
-
-.checkbox-container:has(.checkbox:checked) .checkbox-label {
-  left: 0%;
-}
-
-.checkbox-container:has(.checkbox:checked) [light-mode-icon] {
-  color: var(--_colors---gray--gray-60);
-}
-.checkbox-container:has(.checkbox:checked) [dark-mode-icon] {
-  color: #0d0c1b;
-}
-[light-mode-icon] {
-  color: #0d0c1b;
-}
-[dark-mode-icon] {
-  color: var(--_colors---gray--gray-60);
-}
-/* MODE SWITCHER END */
-
-.nav-link_cont .u-icon.cc-16 {
-  bottom: var(--_spacing---spacing-utility-rem--0-125rem);
-}
-.nav-link_target {
-  display: grid;
-  grid-template-rows: 0.8fr;
-  transition: grid-template-rows 500ms;
-}
-.nav-link_cont:has(.nav-link_trigger:hover) .nav-link_target,
-.nav-link_cont .nav-link_target:hover {
-  grid-template-rows: 1fr;
-}
-.nav-link_cont:has(.nav-link_trigger:hover) .nav-link_text,
-.nav-link_cont:has(.nav-link_trigger:hover) .nav-link_text {
-  color: var(--_colors---brand-colors--tech-purple);
-}
-
-.nav-link_cont:has(.nav-link_trigger:hover) .u-icon.cc-16,
-.nav-link_cont:has(.nav-link_trigger:hover) .u-icon.cc-16 {
-  color: var(--_colors---colors-main--primary);
-  transform: rotate(180deg);
-}
-
-/* BURGER OPEN START */
-@media screen and (max-width: 991px) {
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(1) {
-    transform: rotate(45deg);
-    top: 4.5px;
-  }
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(2) {
-    width: 0px;
-  }
-  .section.for-header:has(.burger-checkbox:checked)
-    .header-burger_item:nth-child(3) {
-    transform: rotate(-45deg);
-    bottom: 4.5px;
-  }
-  .header-links_wrap {
-    display: grid;
-    grid-template-rows: 0dvh;
-    transition: grid-template-rows 0ms;
-  }
-  .section.for-header:has(.burger-checkbox:checked) .burger-bg {
-    opacity: 1;
-  }
-  .section.for-header:has(.burger-checkbox:checked) {
-    z-index: 1001;
-  }
-  .nav-link_target {
-    background-color: transparent !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--1-5rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-@media (min-width: 480px) and (max-width: 767px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--1rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-@media (min-width: 180px) and (max-width: 479px) {
-  .section.for-header:has(.burger-checkbox:checked) .header-links_wrap {
-    grid-template-rows: calc(
-      100dvh - var(--_spacing---spacing-utility-rem--0-5rem) * 2 -
-        var(--_spacing---spacing-utility-rem--2-5rem)
-    );
-  }
-}
-/* BURGER OPEN END */
-
 body.dark-mode {
   .royal-navy-logo {
     outline: white solid 2px;
@@ -967,12 +20,8 @@ body.dark-mode {
   .anchor-nav-wrap .for-anchors {
     opacity: 0.4;
   }
-  .sort-link_item:has(.radio-tick:checked) {
-    color: white !important;
-    background-color: hsba(240, 61%, 49%, 0.25) !important;
-  }
-  .btn:hover,
-  .tabs-filters_radio-wrap:has(.radio-tick:checked) .tabs-filters_line {
+
+  .btn:hover {
     background-color: var(--_colors---text--light-mode-primary-100);
     box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
   }
@@ -981,13 +30,35 @@ body.dark-mode {
     text-shadow: 0px 0px 18px rgba(81, 82, 218, 0.75);
     box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0);
   }
-
-  ul li::before {
+  /*.nav-link_cont:has(.nav-link_trigger:hover) .nav-link_trigger, .nav-link_cont:has(.nav-link_target:hover) .nav-link_trigger {
+    color: white;
+  }*/
+  .nav-link_cont:has(.nav-link_trigger:hover) .nav-link_trigger,
+  .nav-link_cont:has(.nav-link_target:hover) .nav-link_trigger,
+  .nav-link_cont:has(.nav-link_trigger:focus-visible) .nav-link_trigger,
+  .nav-link_cont:has(.nav-link_target a:focus-visible) .nav-link_trigger {
+    background-color: var(--_colors---background--additional-hover);
+  }
+  .nav-link_target a:focus-visible {
+    background-color: var(--_colors---background--additional-hover);
+    outline-offset: 0;
+  }
+  .nav-logo_link:hover {
+    color: white;
+  }
+  .sort-link_item:has(.radio-tick:checked) {
+    color: var(--_colors---background--lightning-blue);
+  }
+  .sort-link_item:hover .p-14 {
+    text-shadow: 0px 0px 18px rgba(81, 82, 218, 0.75);
+    box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0);
+  }
+  /*ul li::before{
     background-color: var(--_colors---brand-colors--soft-purple);
   }
-  ol li::marker {
+    ol li::marker{
     color: var(--_colors---brand-colors--soft-purple);
-  }
+  }*/
   .tl_line {
     background-color: var(--_colors---text--light-mode-primary-10);
   }
@@ -1002,9 +73,6 @@ body.dark-mode {
   .tl_line-growth {
     background-color: var(--_colors---text--light-mode-secondary-80);
     box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
-  }
-  .eyebrow {
-    text-shadow: 0px 0px 20px rgba(81, 82, 218, 0.75);
   }
   .item-card_bl .download-btn .u-icon {
     color: var(--_colors---brand-colors--soft-purple);
@@ -1023,35 +91,60 @@ body.dark-mode {
       color: var(--_colors---brand-colors--soft-purple);
     }
   }
-  .item-card_tag {
-    background-color: var(--_colors---background--secondary-bg);
+  .btn.for-socials {
+    background-color: #282644;
   }
-  .item-card_bl.feedback-person {
-    background-color: var(--_colors---background--secondary-bg);
-  }
+
   .item-card_bl.medium-for-logo {
     color: #fff;
   }
   .item-card_bl.medium-for-logo:hover {
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
-    background-color: var(--_colors---brand-colors--tech-purple);
+    /*box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);*/
+    background-color: var(--_colors---background--additional-hover);
   }
   .item-card_bl.medium-for-logo:focused {
     outline: var(--_colors---brand-colors--soft-purple) solid 3px;
     outline-offset: 0px;
-    background-color: var(--_colors---text--light-mode-secondary-80);
+    background-color: var(--_colors---background--additional-hover);
   }
   .item-card_bl.medium-for-logo:active {
-    background-color: var(--_colors---text--light-mode-secondary-80);
-    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
+    background-color: #37355e;
+    /*      box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);*/
+  }
+  .team-quote_mark {
+    color: var(--_colors---brand-colors--dark-purple);
+    overflow: visible !important;
+  }
+  .team-quote_mark path {
+    filter: drop-shadow(0 2px 8px rgb(81 82 218 / 100%));
+  }
+  /*  .nav-link_target{
+    background-color: rgba(25, 24, 39, 0.4);
+  }*/
+  .nav-link_item:hover,
+  .nav-link_item-single:hover {
+    background-color: #30307c73;
   }
   .nav-link_target {
-    background-color: rgba(25, 24, 39, 0.4);
+    box-shadow: 0 2px 20px rgb(62 55 141 / 25%);
   }
   .sort-link_target {
     background-color: rgba(24, 38, 39, 0.4);
   }
+  .tabs-filters_line {
+    background-color: var(--_colors---brand-colors--tech-purple);
+  }
+  .active-tab-line {
+    border-radius: 100px;
+    box-shadow: 0 0 23.962px 0 #5c85e6, 0 0 6.989px 0 #5c85e6,
+      0 0 1.997px 0 #5c85e6, 0 0 0.998px 0 #5c85e6;
+  }
+  .item-card_bl.medium-for-logo:hover .logo-section-item{
+    box-shadow: 0 0 23.962px 0 #5c85e6, 0 0 6.989px 0 #5c85e6,
+      0 0 1.997px 0 #5c85e6, 0 0 0.998px 0 #5c85e6;
+  }
 }
+
 .tl_circle.active {
   border: 3px solid var(--_colors---brand-colors--tech-purple);
 }
@@ -1064,9 +157,9 @@ body.dark-mode {
   }
 }
 .item-card_bl.medium-for-logo:hover {
-  background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
-  color: var(--_colors---brand-colors--tech-purple);
+  background-color: var(--_colors---background--additional-hover);
+  /*box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
+    color: ;*/
 }
 .item-card_bl.medium-for-logo:focused {
   outline: var(--_colors---brand-colors--soft-purple) solid 3px;
@@ -1074,218 +167,22 @@ body.dark-mode {
 }
 .item-card_bl.medium-for-logo:active {
   background-color: #fff;
-  box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);
+  /*    box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 0);*/
   color: var(--_colors---text--light-mode-primary-100);
 }
 .subscribe-form_success-icon-wrap {
   box-shadow: 0px 0px 12px 0px rgba(228, 233, 240, 1);
 }
-[custom-hero-section] {
+[custom-hero-section],
+.product-card_wrap.for-qlas {
   .btn:hover {
     background-color: var(--_colors---text--light-mode-primary-100);
     box-shadow: 0px 0px 18px 2px rgba(81, 82, 218, 0.75);
   }
 }
-
-/* SCREEN RESIZERS START */
-@media (min-width: 1440px) and (max-width: 1728px) {
-  :root{
-  --_fonts---type-h3--font-size: clamp(3rem, 0.5rem + 2.7778vw, 3.5rem);
-  --_spacing---spacing-layout--container-max-width-90: clamp(90rem, 0rem + 100vw, 108rem)
-  }
+.search-input_wrap:has(.search-input:hover) {
+  border-bottom: 2px solid var(--_colors---brand-colors--tech-purple);
 }
-@media (min-width: 1728px) and (max-width: 3200px) {
-  :root {
-    --_fonts---type-h1--font-size: clamp(5rem, 1.4783rem + 3.2609vw, 8rem);
-  --_fonts---type-h2--font-size: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_fonts---type-h3--font-size: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_fonts---type-h4--font-size: clamp(2.375rem, 0.7022rem + 1.5489vw, 3.8rem);
-  --_fonts---type-h5--font-size: clamp(1.875rem, 0.5543rem + 1.2228vw, 3rem);
-  --_fonts---type-h6--font-size: clamp(1.5rem, 0.4435rem + 0.9783vw, 2.4rem);
-
-  --_fonts---type-eyebrow--font-size: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-  --_fonts---caption--caption-sm: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-
-  --_fonts---type-paragraph-20--font-size: clamp(1.25rem, 0.3696rem + 0.8152vw, 2rem);
-  --_fonts---type-paragraph-18--font-size: clamp(1.125rem, 0.3326rem + 0.7337vw, 1.8rem);
-  --_fonts---type-paragraph-16--font-size: clamp(1rem, 0.2957rem + 0.6522vw, 1.6rem);
-  --_fonts---type-body--font-size: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-  --_fonts---type-paragraph-14--font-size: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-
-  --_spacing---spacing-utility-rem--0-125rem: clamp(0.125rem, 0.037rem + 0.0815vw, 0.2rem);
-  --_spacing---spacing-utility-rem--0-25rem: clamp(0.25rem, 0.0739rem + 0.163vw, 0.4rem);
-  --_spacing---spacing-utility-rem--0-5rem: clamp(0.5rem, 0.1478rem + 0.3261vw, 0.8rem);
-  --_spacing---spacing-utility-rem--0-75rem: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-  --_spacing---spacing-utility-rem--0-875rem: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-  --_spacing---spacing-utility-rem--1rem: clamp(1rem, 0.2957rem + 0.6522vw, 1.6rem);
-  --_spacing---spacing-utility-rem--1-125rem: clamp(1.125rem, 0.3326rem + 0.7337vw, 1.8rem);
-  --_spacing---spacing-utility-rem--1-5rem: clamp(1.5rem, 0.4435rem + 0.9783vw, 2.4rem);
-  --_spacing---spacing-utility-rem--1-75rem: clamp(1.75rem, 0.5174rem + 1.1413vw, 2.8rem);
-  --_spacing---spacing-utility-rem--2rem: clamp(2rem, 0.5913rem + 1.3043vw, 3.2rem);
-  --_spacing---spacing-utility-rem--2-5rem: clamp(2.5rem, 0.7391rem + 1.6304vw, 4rem);
-  --_spacing---spacing-utility-rem--3rem: clamp(3rem, 0.887rem + 1.9565vw, 4.8rem);
-  --_spacing---spacing-utility-rem--3-5rem: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_spacing---spacing-utility-rem--4rem: clamp(4rem, 1.1826rem + 2.6087vw, 6.4rem);
-  --_spacing---spacing-utility-rem--5rem: clamp(5rem, 1.4783rem + 3.2609vw, 8rem);
-  --_spacing---spacing-utility-rem--5-5rem: clamp(5.5rem, 1.6261rem + 3.587vw, 8.8rem);
-  --_spacing---spacing-utility-rem--6rem: clamp(6rem, 1.7739rem + 3.913vw, 9.6rem);
-  --_spacing---spacing-utility-rem--7rem: clamp(7rem, 2.0696rem + 4.5652vw, 11.2rem);
-  --_spacing---spacing-utility-rem--7-5rem: clamp(7.5rem, 2.2174rem + 4.8913vw, 12rem);
-  --_spacing---spacing-utility-rem--8rem: clamp(8rem, 2.3652rem + 5.2174vw, 12.8rem);
-  --_spacing---spacing-utility-rem--8-5rem: clamp(8.5rem, 2.513rem + 5.5435vw, 13.6rem);
-  --_spacing---spacing-utility-rem--9rem: clamp(9rem, 2.6609rem + 5.8696vw, 14.4rem);
-  --_spacing---spacing-utility-rem--10rem: clamp(10rem, 2.9565rem + 6.5217vw, 16rem);
-
-  --_spacing---spacing-layout--container-max-width-90: clamp(108rem, 32.8696rem + 69.5652vw, 172rem);
-  }
+.search-input_wrap:has(.search-input:focus) {
+  border-bottom: 2px solid var(--_colors---background--lightning-blue);
 }
-
-
-/* 1440px sizes */
-
-:root {
-  --_fonts---type-h1--font-size: 5rem;
-  --_fonts---type-h2--font-size: 3.5rem;
-  --_fonts---type-h3--font-size: 3rem;
-  --_fonts---type-h4--font-size: 2.375rem;
-  --_fonts---type-h5--font-size: 1.875rem;
-  --_fonts---type-h6--font-size: 1.5rem;
-
-  --_fonts---type-eyebrow--font-size: 0.75rem;
-  --_fonts---caption--caption-sm: 0.75rem;
-
-  --_fonts---type-paragraph-20--font-size: 1.25rem;
-  --_fonts---type-paragraph-18--font-size: 1.125rem;
-  --_fonts---type-paragraph-16--font-size: 1rem;
-  --_fonts---type-body--font-size: 0.875rem;
-  --_fonts---type-paragraph-14--font-size: 0.875rem;
-
-  --_spacing---spacing-utility-rem--0-125rem: 0.125rem;
-  --_spacing---spacing-utility-rem--0-25rem: 0.25rem;
-  --_spacing---spacing-utility-rem--0-5rem: 0.5rem;
-  --_spacing---spacing-utility-rem--0-75rem: 0.75rem;
-  --_spacing---spacing-utility-rem--0-875rem: 0.875rem;
-  --_spacing---spacing-utility-rem--1rem: 1rem;
-  --_spacing---spacing-utility-rem--1-125rem: 1.125rem;
-  --_spacing---spacing-utility-rem--1-5rem: 1.5rem;
-  --_spacing---spacing-utility-rem--1-75rem: 1.75rem;
-  --_spacing---spacing-utility-rem--2rem: 2rem;
-  --_spacing---spacing-utility-rem--2-5rem: 2.5rem;
-  --_spacing---spacing-utility-rem--3rem: 3rem;
-  --_spacing---spacing-utility-rem--3-5rem: 3.5rem;
-  --_spacing---spacing-utility-rem--4rem: 4rem;
-  --_spacing---spacing-utility-rem--5rem: 5rem;
-  --_spacing---spacing-utility-rem--5-5rem: 5.5rem;
-  --_spacing---spacing-utility-rem--6rem: 6rem;
-  --_spacing---spacing-utility-rem--7rem: 7rem;
-  --_spacing---spacing-utility-rem--7-5rem: 7.5rem;
-  --_spacing---spacing-utility-rem--8rem: 8rem;
-  --_spacing---spacing-utility-rem--8-5rem: 8.5rem;
-  --_spacing---spacing-utility-rem--9rem: 9rem;
-  --_spacing---spacing-utility-rem--10rem: 10rem;
-
-  --_spacing---spacing-layout--container-max-width-90: 90rem;
-}
-
-/* 1728 sizes */
-:root {
-  --_fonts---type-h1--font-size: clamp(5rem, 1.4783rem + 3.2609vw, 8rem);
-  --_fonts---type-h2--font-size: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_fonts---type-h3--font-size: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_fonts---type-h4--font-size: clamp(2.375rem, 0.7022rem + 1.5489vw, 3.8rem);
-  --_fonts---type-h5--font-size: clamp(1.875rem, 0.5543rem + 1.2228vw, 3rem);
-  --_fonts---type-h6--font-size: clamp(1.5rem, 0.4435rem + 0.9783vw, 2.4rem);
-
-  --_fonts---type-eyebrow--font-size: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-  --_fonts---caption--caption-sm: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-
-  --_fonts---type-paragraph-20--font-size: clamp(1.25rem, 0.3696rem + 0.8152vw, 2rem);
-  --_fonts---type-paragraph-18--font-size: clamp(1.125rem, 0.3326rem + 0.7337vw, 1.8rem);
-  --_fonts---type-paragraph-16--font-size: clamp(1rem, 0.2957rem + 0.6522vw, 1.6rem);
-  --_fonts---type-body--font-size: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-  --_fonts---type-paragraph-14--font-size: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-
-  --_spacing---spacing-utility-rem--0-125rem: clamp(0.125rem, 0.037rem + 0.0815vw, 0.2rem);
-  --_spacing---spacing-utility-rem--0-25rem: clamp(0.25rem, 0.0739rem + 0.163vw, 0.4rem);
-  --_spacing---spacing-utility-rem--0-5rem: clamp(0.5rem, 0.1478rem + 0.3261vw, 0.8rem);
-  --_spacing---spacing-utility-rem--0-75rem: clamp(0.75rem, 0.2217rem + 0.4891vw, 1.2rem);
-  --_spacing---spacing-utility-rem--0-875rem: clamp(0.875rem, 0.2587rem + 0.5707vw, 1.4rem);
-  --_spacing---spacing-utility-rem--1rem: clamp(1rem, 0.2957rem + 0.6522vw, 1.6rem);
-  --_spacing---spacing-utility-rem--1-125rem: clamp(1.125rem, 0.3326rem + 0.7337vw, 1.8rem);
-  --_spacing---spacing-utility-rem--1-5rem: clamp(1.5rem, 0.4435rem + 0.9783vw, 2.4rem);
-  --_spacing---spacing-utility-rem--1-75rem: clamp(1.75rem, 0.5174rem + 1.1413vw, 2.8rem);
-  --_spacing---spacing-utility-rem--2rem: clamp(2rem, 0.5913rem + 1.3043vw, 3.2rem);
-  --_spacing---spacing-utility-rem--2-5rem: clamp(2.5rem, 0.7391rem + 1.6304vw, 4rem);
-  --_spacing---spacing-utility-rem--3rem: clamp(3rem, 0.887rem + 1.9565vw, 4.8rem);
-  --_spacing---spacing-utility-rem--3-5rem: clamp(3.5rem, 1.0348rem + 2.2826vw, 5.6rem);
-  --_spacing---spacing-utility-rem--4rem: clamp(4rem, 1.1826rem + 2.6087vw, 6.4rem);
-  --_spacing---spacing-utility-rem--5rem: clamp(5rem, 1.4783rem + 3.2609vw, 8rem);
-  --_spacing---spacing-utility-rem--5-5rem: clamp(5.5rem, 1.6261rem + 3.587vw, 8.8rem);
-  --_spacing---spacing-utility-rem--6rem: clamp(6rem, 1.7739rem + 3.913vw, 9.6rem);
-  --_spacing---spacing-utility-rem--7rem: clamp(7rem, 2.0696rem + 4.5652vw, 11.2rem);
-  --_spacing---spacing-utility-rem--7-5rem: clamp(7.5rem, 2.2174rem + 4.8913vw, 12rem);
-  --_spacing---spacing-utility-rem--8rem: clamp(8rem, 2.3652rem + 5.2174vw, 12.8rem);
-  --_spacing---spacing-utility-rem--8-5rem: clamp(8.5rem, 2.513rem + 5.5435vw, 13.6rem);
-  --_spacing---spacing-utility-rem--9rem: clamp(9rem, 2.6609rem + 5.8696vw, 14.4rem);
-  --_spacing---spacing-utility-rem--10rem: clamp(10rem, 2.9565rem + 6.5217vw, 16rem);
-
-  --_spacing---spacing-layout--container-max-width-90: 108rem;
-}
-
-/* OLD VALUES */
-/* @media (min-width: 1440px) and (max-width: 3200px) {
-  :root {
-    --_spacing---spacing-utility-rem--0-125rem: clamp(0.125rem, 0.0448rem + 0.0891vw, 0.278rem );
-    --_spacing---spacing-utility-rem--0-25rem: clamp( 0.25rem, 0.0095rem + 0.2673vw, 0.556rem);
-    --_spacing---spacing-utility-rem--0-5rem: clamp( 0.5rem, 0.1793rem + 0.3563vw, 1.111rem);
-    --_spacing---spacing-utility-rem--0-75rem: clamp( 0.75rem, 0.2689rem + 0.5345vw, 1.668rem);
-    --_spacing---spacing-utility-rem--0-875rem: clamp( 0.875rem, 0.3138rem + 0.6236vw, 1.945rem);
-    --_spacing---spacing-utility-rem--1rem: clamp( 1rem, 0.5189rem + 0.5345vw, 2.223rem);
-    --_spacing---spacing-utility-rem--1-125rem: clamp( 1.125rem, 0.4034rem + 0.8018vw, 2.501rem);
-    --_spacing---spacing-utility-rem--1-25rem: clamp( 1.25rem, 0.4482rem + 0.8909vw, 2.778rem);
-    --_spacing---spacing-utility-rem--1-5rem: clamp( 1.5rem, 0.5379rem + 1.069vw, 3.334rem);
-    --_spacing---spacing-utility-rem--1-75rem: clamp( 1.75rem, 0.6275rem + 1.2472vw, 3.891rem);
-    --_spacing---spacing-utility-rem--2rem: clamp( 2rem, 0.8775rem + 1.2472vw, 4.446rem);
-    --_spacing---spacing-utility-rem--2-5rem: clamp( 2.5rem, 0.5757rem + 2.1381vw, 5.556rem);
-    --_spacing---spacing-utility-rem--3rem: clamp( 3rem, 1.0757rem + 2.1381vw, 6.669rem);
-    --_spacing---spacing-utility-rem--3-5rem: clamp( 3.5rem, 1.255rem + 2.4944vw, 7.781rem);
-    --_spacing---spacing-utility-rem--4rem: clamp( 4rem, 0.7929rem + 3.5635vw, 8.892rem);
-    --_spacing---spacing-utility-rem--5rem: clamp( 5rem, 0.1893rem + 5.3452vw, 11.115rem);
-    --_spacing---spacing-utility-rem--5-5rem: clamp( 5.5rem, -0.0163rem + 6.1292vw, 12.226rem);
-    --_spacing---spacing-utility-rem--6rem: clamp( 6rem, 0.2272rem + 6.4143vw, 13.338rem);
-    --_spacing---spacing-utility-rem--7rem: clamp( 7rem, -0.0557rem + 7.8396vw, 15.558rem);
-    --_spacing---spacing-utility-rem--7-5rem: clamp( 7.5rem, 0.1236rem + 8.196vw, 16.669rem);
-    --_spacing---spacing-utility-rem--8rem: clamp( 8rem, -0.0178rem + 8.9087vw, 17.781rem);
-    --_spacing---spacing-utility-rem--8-5rem: clamp( 8.5rem, 0.0011rem + 9.4432vw, 18.892rem);
-    --_spacing---spacing-utility-rem--9rem: clamp( 9rem, 0.02rem + 9.9777vw, 20.004rem);
-    --_spacing---spacing-utility-rem--10rem: clamp( 10rem, 0.0579rem + 11.0468vw, 22.23rem);
-    --_spacing---spacing-layout--container-max-width-90: clamp( 90rem, 0.0016rem + 99.9982vw, 200.07rem);
-
-    /* FONTS 
-    --_fonts---type-h1--font-size: clamp(5rem, -0.0031rem + 5.559vw, 11.115rem);
-    --_fonts---type-h2--font-size: clamp(3.5rem, 0.0042rem + 3.8842vw, 7.78rem);
-    --_fonts---type-h3--font-size: clamp(3.5rem, 0.0042rem + 3.8842vw, 7.78rem);
-    --_fonts---type-h4--font-size: clamp(2.375rem, -0.0182rem + 2.6591vw, 5.3rem);
-    --_fonts---type-h5--font-size: clamp(1.875rem, -0.0027rem + 2.0864vw, 4.17rem);
-    --_fonts---type-h6--font-size: clamp(1.5rem, -0.0055rem + 1.6727vw, 3.34rem);
-    --_fonts---type-body--font-size: clamp(0.875rem, -0.0045rem + 0.9773vw, 1.95rem);
-    --_fonts---type-eyebrow--font-size: clamp(0.75rem, -0.0273rem + 0.8636vw, 1.7rem);
-    --_fonts---type-paragraph-14--font-size: clamp(0.875rem, 0.0364rem + 0.9318vw, 1.9rem);
-    --_fonts---type-paragraph-16--font-size: clamp(1rem, -0.0636rem + 1.1818vw, 2.3rem);
-    --_fonts---type-paragraph-18--font-size: clamp(1.125rem, 0rem + 1.25vw, 2.5rem);
-    --_fonts---type-paragraph-20--font-size: clamp(1.25rem, -0.0018rem + 1.3909vw, 2.78rem);
-
-     /* --_fonts---type-h1--font-size: clamp(5rem, -0.0031rem + 5.559vw, 11.115rem);
-    --_fonts---type-h2--font-size: clamp(3.5rem, 0.0042rem + 3.8842vw, 7.78rem);
-    --_fonts---type-h3--font-size: clamp(3rem, -0.0147rem + 3.3497vw, 6.669rem);
-    --_fonts---type-h4--font-size: clamp(2.375rem, -0.0182rem + 2.6591vw, 5.3rem);
-    --_fonts---type-h5--font-size: clamp(1.875rem, -0.0027rem + 2.0864vw, 4.17rem);
-    --_fonts---type-h6--font-size: clamp(1.5rem, -0.0055rem + 1.6727vw, 3.34rem);
-    --_fonts---type-body--font-size: clamp(0.875rem, -0.0045rem + 0.9773vw, 1.95rem);
-    --_fonts---type-eyebrow--font-size: clamp(0.75rem, -0.0273rem + 0.8636vw, 1.7rem);
-    --_fonts---type-paragraph-14--font-size: clamp(0.875rem, 0.0364rem + 0.9318vw, 1.9rem);
-    --_fonts---type-paragraph-16--font-size: clamp(1rem, -0.0636rem + 1.1818vw, 2.3rem);
-    --_fonts---type-paragraph-18--font-size: clamp(1.125rem, 0rem + 1.25vw, 2.5rem);
-    --_fonts---type-paragraph-20--font-size: clamp(1.25rem, -0.0018rem + 1.3909vw, 2.78rem);
-  }
-} */
