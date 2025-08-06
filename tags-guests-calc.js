@@ -65,7 +65,7 @@ const collectionItemBl = document.querySelectorAll(".content-cli");
 const hasPublicationGuestsTrigger = document.querySelector("[publication-guests-trigger]") !== null;
 
 collectionItemBl.forEach((item, index) => {
-    const collectionItemWidth = item.offsetWidth - 48;
+    const collectionItemWidth = item.offsetWidth - 64;
     let tags = Array.from(item.querySelectorAll(".tag_cli"));
 
     const calculateTotalTagWidth = () => {
