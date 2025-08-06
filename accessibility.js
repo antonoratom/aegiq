@@ -1,8 +1,9 @@
 // HERO SCROLL START
+
 const heroSection = document.querySelector("[custom-hero-section]");
 const globalHeader = document.querySelector("[global-header]");
 const globalHeaderBg = document.querySelector("[for-header-bg]");
-globalHeaderBg.classList.remove('custom-dark-bg');
+globalHeaderBg.classList.remove("custom-dark-bg");
 
 if (heroSection && globalHeader) {
   ScrollTrigger.create({
@@ -28,11 +29,13 @@ if (globalHeader) {
 
     if (scrolledPast && !isBlurred) {
       isBlurred = true;
-      gsap.to(globalHeader, {
-        paddingTop: initialPaddingTop / 3 + "px",
-        paddingBottom: initialPaddingBottom / 3 + "px",
-        duration: 0.3,
-      });
+      if (window.matchMedia("(mix-width: 990px)").matches) {
+        gsap.to(globalHeader, {
+          paddingTop: initialPaddingTop / 3 + "px",
+          paddingBottom: initialPaddingBottom / 3 + "px",
+          duration: 0.3,
+        });
+      }
       gsap.to(
         globalHeaderBg,
         {
@@ -44,11 +47,13 @@ if (globalHeader) {
       );
     } else if (!scrolledPast && isBlurred) {
       isBlurred = false;
-      gsap.to(globalHeader, {
-        paddingTop: initialPaddingTop + "px",
-        paddingBottom: initialPaddingBottom + "px",
-        duration: 0.3,
-      });
+      if (window.matchMedia("(mix-width: 990px)").matches) {
+        gsap.to(globalHeader, {
+          paddingTop: initialPaddingTop + "px",
+          paddingBottom: initialPaddingBottom + "px",
+          duration: 0.3,
+        });
+      }
       gsap.to(
         globalHeaderBg,
         {
@@ -122,7 +127,9 @@ if (document.querySelector(".swiper")) {
 
   //START SWIPER FOR ALL PRODUCTS PAGE
   if (window.innerWidth < 992) {
-    const whatWeDoWrapElement = document.querySelector(".what-we-do_wrap.swiper");
+    const whatWeDoWrapElement = document.querySelector(
+      ".what-we-do_wrap.swiper"
+    );
     if (whatWeDoWrapElement) {
       const swiper = new Swiper(whatWeDoWrapElement, {
         slidesPerView: 1,
@@ -182,7 +189,6 @@ if (document.querySelector(".swiper")) {
   //END SWIPER FOR OPEN ARTICLES PREVIEWS
 }
 //END ALL SWIPERS
-
 
 //PAGINATION OBSERVER
 document.addEventListener("DOMContentLoaded", function () {
